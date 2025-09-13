@@ -1,0 +1,206 @@
+/* ===== FICHIER: css/accueil.css ===== */
+/* Styles spécifiques à la page d'accueil */
+
+.body-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Section statistiques */
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.accueil-card {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.accueil-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+.accueil-card h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ecf0f1;
+}
+
+.accueil-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Section actualités */
+.news-section {
+    margin: 3rem 0;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+.news-section h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.news-item {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 3px solid #e74c3c;
+    transition: transform 0.2s ease;
+}
+
+.news-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.news-item h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.news-item p {
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.news-item small {
+    color: #888;
+    font-style: italic;
+}
+
+#loadMoreNews {
+    background: #e74c3c;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+#loadMoreNews:hover {
+    background: #c0392b;
+}
+
+/* Section actions rapides */
+.quick-actions {
+    margin: 3rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    padding: 2.5rem;
+    border-radius: 15px;
+    color: white;
+}
+
+.quick-actions h3 {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #ecf0f1;
+}
+
+.action-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Responsive pour la page d'accueil */
+@media (max-width: 768px) {
+    .body-content {
+        padding: 1rem;
+    }
+    
+    .stats-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .accueil-card {
+        padding: 1.5rem;
+    }
+    
+    .accueil-card h3 {
+        font-size: 2rem;
+    }
+    
+    .news-section,
+    .quick-actions {
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .action-btn {
+        display: block;
+        margin: 0.5rem auto;
+        width: 80%;
+    }
+}
+
+/* Ajout aux styles existants pour rendre les cards cliquables */
+
+.accueil-card.clickable-card {
+    cursor: pointer;
+    user-select: none; /* Empêche la sélection du texte */
+    position: relative; /* Pour le positionnement de l'icône */
+}
+
+/* Amélioration de l'effet hover existant pour les cards cliquables */
+.accueil-card.clickable-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(52, 152, 219, 0.5);
+}
+
+/* Effet de clic */
+.accueil-card.clickable-card:active {
+    transform: translateY(-3px) scale(0.98);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Indicateur visuel optionnel pour montrer que c'est cliquable */
+.accueil-card.clickable-card::after {
+    content: '→';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+}
+
+.accueil-card.clickable-card:hover::after {
+    opacity: 1;
+}
