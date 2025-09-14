@@ -1,0 +1,142 @@
+/* ===== FICHIER: css/footer.css ===== */
+
+/* Footer professionnel et discret */
+.page-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+    border-top: 3px solid #34495e;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-content h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #bdc3c7;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    color: #95a5a6;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Effet hover subtil */
+.page-footer:hover .footer-content h3 {
+    color: #ecf0f1;
+    transition: color 0.3s ease;
+}
+
+.page-footer:hover .footer-content p {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .page-footer {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .footer-content h3 {
+        font-size: 0.9rem;
+    }
+    
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Version alternative plus minimaliste */
+.page-footer.minimal {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    box-shadow: none;
+}
+
+.page-footer.minimal .footer-content h3 {
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.page-footer.minimal .footer-content p {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+/* Version avec gradient subtil */
+.page-footer.gradient {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+}
+
+.page-footer.gradient .footer-content h3 {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Ajout d'une ligne décorative subtile */
+.page-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3498db, transparent);
+}
+
+.page-footer {
+    position: relative;
+}
+
+/* Animation au scroll (optionnel) */
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-footer {
+    animation: fadeInFooter 0.6s ease-out;
+}
+
+/* Style pour les liens si vous en ajoutez */
+.footer-content a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #5dade2;
+    text-decoration: underline;
+}
